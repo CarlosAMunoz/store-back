@@ -23,5 +23,5 @@ public class Productos {
     private String Nombre;
     private String Descripcion; 
     private Double Precio; 
-   // private java.sql.Blob Imagen; 
+    private String Imagen; 
 }

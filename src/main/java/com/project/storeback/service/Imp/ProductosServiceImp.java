@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.storeback.dto.ProductosDto;
 import com.project.storeback.dto.mapper.ProductosMapper;
+import com.project.storeback.excepciones.NoDataFoundException;
 import com.project.storeback.models.Productos;
 import com.project.storeback.repository.ProductosRepository;
 import com.project.storeback.service.IProductosService;
@@ -39,8 +40,7 @@ public class ProductosServiceImp implements IProductosService{
         }
         else
         {
-            //Todo
-            // throw new NoDataFoundException();
+             throw new NoDataFoundException();
         }
         return productosDto;
     }
