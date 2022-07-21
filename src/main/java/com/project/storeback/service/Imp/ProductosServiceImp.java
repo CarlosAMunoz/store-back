@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.project.storeback.dto.ProductosDto;
 import com.project.storeback.dto.mapper.ProductosMapper;
-import com.project.storeback.excepciones.NoDataFoundException;
 import com.project.storeback.models.Productos;
 import com.project.storeback.repository.ProductosRepository;
 import com.project.storeback.service.IProductosService;
@@ -39,15 +38,15 @@ public class ProductosServiceImp implements IProductosService{
             productosDto = productosMapper.modelToDto(productosRepository.findById(Id).get());
         }
         else
-        {
-             throw new NoDataFoundException();
+        {   
+            return productosDto;
         }
         return productosDto;
     }
 
     @Override
     public ProductosDto guardarProducto(ProductosDto productosDto) {
-        if (productosDto.getId() == 0)
+        if (productosDto.getId() == null)
         {
             Productos productos = new Productos();
             productos = productosMapper.dtoToModel(productosDto);
