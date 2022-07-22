@@ -15,5 +15,6 @@ public class ProductosDto {
     private List<String> Categorias; //Para listar
     private List<Long> AsignarCategorias; //[1,2,4,6] los vamos para guardar
     private String Imagen; 
+    private Double CantidadDisponible; 
 }
     

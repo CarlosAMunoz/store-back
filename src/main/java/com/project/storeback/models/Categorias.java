@@ -1,6 +1,5 @@
 package com.project.storeback.models;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,15 +13,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "TBL_Producto")
-public class Productos {
-
+@Table (name = "TBL_categorias")
+public class Categorias {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    private String Nombre;
-    private String Descripcion; 
-    private Double Precio; 
-    private String Imagen; 
-    private Double CantidadDisponible; 
+    private String Nombre; 
 }
