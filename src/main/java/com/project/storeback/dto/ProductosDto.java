@@ -1,6 +1,7 @@
 package com.project.storeback.dto;
 
-import java.util.List;
+import com.project.storeback.models.Categorias;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,8 +13,7 @@ public class ProductosDto {
     private String Nombre;
     private String Descripcion; 
     private Double Precio; 
-    private List<String> Categorias; //Para listar
-    private List<Long> AsignarCategorias; //[1,2,4,6] los vamos para guardar
+    private Categorias id_Categoria; //Id
     private String Imagen; 
     private Double CantidadDisponible; 
 }

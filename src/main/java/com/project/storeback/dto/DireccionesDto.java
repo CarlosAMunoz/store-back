@@ -5,8 +5,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CategoriasDto {
+public class DireccionesDto {
 
-    private Long Id_Categoria;
-    private String Nombre; 
+
+    private Long id_direccion;
+    private String descripcion;
 }

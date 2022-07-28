@@ -10,14 +10,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-@Getter
 @Setter
+@Getter
 @Entity
-@Table (name = "TBL_categorias")
-public class Categorias {
+@Table(name = "TBL_Direccion")
+public class Direcciones {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id_Categoria;
-    private String Nombre; 
-}
+    private Long id_direccion;
+    private String descripcion;
+
+}   

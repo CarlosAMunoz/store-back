@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -23,6 +25,16 @@ public class Productos {
     private String Nombre;
     private String Descripcion; 
     private Double Precio; 
+
+    @ManyToOne   
+    @JoinColumn(name = "Id_Categoria", referencedColumnName = "Id_Categoria")
+    private Categorias Id_Categoria;
+    
+
     private String Imagen; 
     private Double CantidadDisponible; 
+
+
+
 }
+ 

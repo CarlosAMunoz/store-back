@@ -43,7 +43,7 @@ public class CategoriasServiceImp implements ICategoriasService{
 
     @Override
     public CategoriasDto guardarCategoria(CategoriasDto categoriasDto) {
-        if (categoriasDto.getId() == null)
+        if (categoriasDto.getId_Categoria() == null)
         {
             Categorias categorias = new Categorias();
             categorias = categoriasMapper.dtoToModel(categoriasDto);
@@ -52,7 +52,7 @@ public class CategoriasServiceImp implements ICategoriasService{
             categoriasDto = categoriasMapper.modelToDto(categorias);
         }
         else{
-            Categorias categorias = categoriasRepository.findById(categoriasDto.getId()).get();
+            Categorias categorias = categoriasRepository.findById(categoriasDto.getId_Categoria()).get();
 
             categorias = categoriasMapper.dtoToModel(categoriasDto);
             

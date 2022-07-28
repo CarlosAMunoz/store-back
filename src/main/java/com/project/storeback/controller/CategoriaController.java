@@ -16,7 +16,7 @@ import com.project.storeback.dto.ResponseDto;
 import com.project.storeback.service.ICategoriasService;
 
 @RestController
-@RequestMapping("api/categoria")
+@RequestMapping("api/categorias")
 public class CategoriaController {
     
     private ResponseDto responseDto;

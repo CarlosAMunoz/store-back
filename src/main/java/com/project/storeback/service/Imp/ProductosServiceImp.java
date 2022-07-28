@@ -46,7 +46,7 @@ public class ProductosServiceImp implements IProductosService{
 
     @Override
     public ProductosDto guardarProducto(ProductosDto productosDto) {
-        if (productosDto.getId() == null)
+        if (productosDto.getId() == null )
         {
             Productos productos = new Productos();
             productos = productosMapper.dtoToModel(productosDto);

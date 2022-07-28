@@ -11,29 +11,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.storeback.dto.ProductosDto;
+import com.project.storeback.dto.DireccionesDto;
 import com.project.storeback.dto.ResponseDto;
-import com.project.storeback.service.IProductosService;
+import com.project.storeback.service.IDireccionesServices;
 
-@RestController
-@RequestMapping("api/productos")
-public class ProductoController {
-    
+@RestController 
+@RequestMapping("api/direcciones")
+public class DireccionController {
+        
     private ResponseDto responseDto;
 
 
-    public ProductoController(){
+    public DireccionController(){
         responseDto = new ResponseDto();
         responseDto.setMensaje("Proceso realizado correctamente");
     }
 
-    @Autowired IProductosService productosService;
+    @Autowired IDireccionesServices direccionesServices;
 
 
     @GetMapping(path = "todos")
     public ResponseEntity<ResponseDto> buscarTodos(){
         responseDto.setCodigoRespuesta(HttpStatus.OK.value());
-        responseDto.setData(productosService.listarProductos());
+        responseDto.setData(direccionesServices.listarDirecciones());
         return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
     }
 
@@ -41,16 +41,16 @@ public class ProductoController {
     @GetMapping(path = "buscarporid/{id}")
     public ResponseEntity<ResponseDto> buscarPorId(@PathVariable("id") long id){
         responseDto.setCodigoRespuesta(HttpStatus.OK.value());
-        responseDto.setData(productosService.buscarProducto(id));
+        responseDto.setData(direccionesServices.buscarDireccion(id));
         return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
     }
     
 
     @PostMapping(path = "guardar")
-    public ResponseEntity<ResponseDto> guardar(@RequestBody ProductosDto productosDto)
+    public ResponseEntity<ResponseDto> guardar(@RequestBody DireccionesDto direccionesDto)
     {
         responseDto.setCodigoRespuesta(HttpStatus.CREATED.value());
-        responseDto.setData(productosService.guardarProducto(productosDto));
+        responseDto.setData(direccionesServices.guardarDireccion(direccionesDto));
         return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
     }
 
@@ -59,9 +59,8 @@ public class ProductoController {
     public ResponseEntity<ResponseDto> eliminar(@PathVariable("id") long id)
     {
         responseDto.setCodigoRespuesta(HttpStatus.CREATED.value());
-        productosService.eliminarProducto(id);
+        direccionesServices.eliminarDireccion(id);
         responseDto.setData(null);
         return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
     }
 }
-
