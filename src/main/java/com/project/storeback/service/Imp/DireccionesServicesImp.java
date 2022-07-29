@@ -45,7 +45,7 @@ public class DireccionesServicesImp implements IDireccionesServices {
 
     @Override
     public DireccionesDto guardarDireccion(DireccionesDto direccionesDto) {
-        if (direccionesDto.getId_direccion() == null )
+        if (direccionesDto.getId_Direccion() == null )
         {
             Direcciones direcciones = new Direcciones();
             direcciones = direccionesMapper.dtoToModel(direccionesDto);
@@ -54,7 +54,7 @@ public class DireccionesServicesImp implements IDireccionesServices {
             direccionesDto = direccionesMapper.modelToDto(direcciones);
         }
         else{
-            Direcciones direcciones = direccionesRepository.findById(direccionesDto.getId_direccion()).get();
+            Direcciones direcciones = direccionesRepository.findById(direccionesDto.getId_Direccion()).get();
 
             direcciones = direccionesMapper.dtoToModel(direccionesDto);
             

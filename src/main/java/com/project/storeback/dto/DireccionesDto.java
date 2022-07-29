@@ -8,6 +8,7 @@ import lombok.Setter;
 public class DireccionesDto {
 
 
-    private Long id_direccion;
-    private String descripcion;
+    private Long Id_Direccion;
+    private String Descripcion;
+    private Long Id_Usuario;
 }

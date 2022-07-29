@@ -50,7 +50,7 @@ public class UsuarioServiceImp implements IUsuarioService{
         {
             Usuario usuario = new Usuario();
             usuario = usuarioMapper.dtoToModel(usuarioDto);
-
+            usuario.setId_Usuario(1L);
             usuario = usuarioRepository.save(usuario);
             usuarioDto = usuarioMapper.modelToDto(usuario);
         }

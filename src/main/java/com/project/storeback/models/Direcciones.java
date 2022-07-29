@@ -18,7 +18,8 @@ public class Direcciones {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_direccion;
-    private String descripcion;
+    private Long Id_Direccion;
+    private String Descripcion;
+    private Long Id_Usuario;
 
 }   
