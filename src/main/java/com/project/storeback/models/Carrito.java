@@ -22,6 +22,7 @@ public class Carrito {
     private Long Id_Producto;
     private Double Cantidad;
     private String Nombre_Producto;
-    private Long Id_Persona;
+    private Long Id_Usuario;
+    private Double precio;
 
 }

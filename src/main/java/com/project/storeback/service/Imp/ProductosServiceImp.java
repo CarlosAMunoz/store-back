@@ -30,6 +30,18 @@ public class ProductosServiceImp implements IProductosService{
         return productosDto;
     }
 
+
+    @Override
+    public List<ProductosDto> listarProducosByCategoria(Long Id) {
+        
+        List<ProductosDto> productosDto = new ArrayList<>();
+        List<Productos> productos = (List<Productos>) productosRepository.findByCategoria(Id);
+        productosDto = productosMapper.modelToDtos(productos);
+        return productosDto;
+    }
+    
+
+
     @Override
     public ProductosDto buscarProducto(Long Id) {
         ProductosDto productosDto = new ProductosDto();
@@ -69,5 +81,8 @@ public class ProductosServiceImp implements IProductosService{
     public void eliminarProducto(Long Id) {
         productosRepository.deleteById(Id);
     }
-    
+
+
+
+
 }

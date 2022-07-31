@@ -46,6 +46,14 @@ public class ProductoController {
     }
     
     
+    @GetMapping(path = "buscarporcategoria/{id}")
+    public ResponseEntity<ResponseDto> buscarPorCategoria(@PathVariable("id") long id){
+        responseDto.setCodigoRespuesta(HttpStatus.OK.value());
+        responseDto.setData(productosService.listarProducosByCategoria(id));
+        return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
+    }
+    
+    
     @PostMapping(path = "guardar")
     public ResponseEntity<ResponseDto> guardar(@RequestBody ProductosDto productosDto)
     {
