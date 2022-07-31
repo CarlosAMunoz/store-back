@@ -1,5 +1,7 @@
 package com.project.storeback.dto;
 
+import com.project.storeback.models.Usuario;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,5 +12,5 @@ public class DireccionesDto {
 
     private Long Id_Direccion;
     private String Descripcion;
-    private Long Id_Usuario;
+    private Usuario Id_Usuario;
 }

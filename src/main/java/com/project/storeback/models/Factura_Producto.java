@@ -12,19 +12,25 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-@Setter
 @Getter
+@Setter
 @Entity
-@Table(name = "TBL_Direccion")
-public class Direcciones {
+@Table(name = "TBL_Factura_Producto")
+public class Factura_Producto {
     
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id_Direccion;
-    private String Descripcion;
+    private Long Id_Factura_Producto;
 
-    
     @ManyToOne
-    @JoinColumn(name = "Id_Usuario", referencedColumnName = "Id_Usuario")
-    private Usuario Id_Usuario;
-}   
+    @JoinColumn(name = "Id_Factura", referencedColumnName = "Id_Factura")
+    private Factura Id_Factura;
+
+    @ManyToOne
+    @JoinColumn(name = "Id_Producto", referencedColumnName = "Id")
+    private Productos Id_Producto;
+
+    private String Nombre_Producto;
+    private Double Cantidad;
+
+}
