@@ -30,15 +30,6 @@ public class Factrua_ProductoImp implements IFactura_ProductoService{
         return factura_ProductoDtos;
     }
 
-    @Override
-    public List<Factura_ProductoDto> listarFactura_ProductoPorFactura() {
-        List<Factura_ProductoDto> factura_ProductoDtos = new ArrayList<>();
-        List<Factura_Producto> factura_Productos = (List<Factura_Producto>) factura_ProductoRepository.findByFactura();
-        factura_ProductoDtos = factura_ProductoMapper.modelToDtos(factura_Productos);
-        return factura_ProductoDtos;
-    }
-
-
 
     @Override
     public Factura_ProductoDto buscarFactura_Producto(Long Id) {
