@@ -14,5 +14,6 @@ public class FacturaDto {
     private Usuario Id_Usuario;
     private String Nombre_Usuario;
     private Date Fecha_Compra;
+    private String Direccion;
 
 }

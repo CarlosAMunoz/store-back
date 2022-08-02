@@ -68,5 +68,11 @@ public class CarritoServiceImp implements ICarritoService{
         carritoRepository.deleteById(Id);
         
     }
+
+    @Override
+    public void eliminarTodoCarrito() {
+        carritoRepository.deleteAll();
+        
+    }
     
 }

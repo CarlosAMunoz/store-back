@@ -15,5 +15,5 @@ public interface ProductosRepository extends CrudRepository<Productos, Long>{
 
     @Query(value = "SELECT * FROM `tbl_producto` WHERE id_categoria = :idCategoria", nativeQuery = true)
     Iterable<Productos> findByCategoria(@Param("idCategoria") Long Id);
-
+   
 }

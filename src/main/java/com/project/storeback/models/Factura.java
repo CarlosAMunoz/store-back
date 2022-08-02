@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -30,9 +31,12 @@ public class Factura {
     @ManyToOne
     @JoinColumn(name = "Id_Usuario", referencedColumnName = "Id_Usuario")
     private Usuario Id_Usuario;
+
     private String Nombre_Usuario;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date Fecha_Compra;
+
+    private String Direccion;
 
 }

@@ -38,14 +38,6 @@ public class Factura_ProductoController {
     }
 
 
-    @GetMapping(path = "buscarporid/{id}")
-    public ResponseEntity<ResponseDto> buscarPorId(@PathVariable("id") long id){
-        responseDto.setCodigoRespuesta(HttpStatus.OK.value());
-        responseDto.setData(factura_ProductoService.buscarFactura_Producto(id));
-        return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
-    }
-
-
     @PostMapping(path = "guardar")
     public ResponseEntity<ResponseDto> guardar(@RequestBody Factura_ProductoDto factura_ProductoDto)
     {

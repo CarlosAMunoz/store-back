@@ -37,15 +37,6 @@ public class CarritoController {
         return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
     }
 
-
-    @GetMapping(path = "buscarporid/{id}")
-    public ResponseEntity<ResponseDto> buscarPorId(@PathVariable("id") long id){
-        responseDto.setCodigoRespuesta(HttpStatus.OK.value());
-        responseDto.setData(carritoService.buscarCarrito(id));
-        return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
-    }
-
-
     @PostMapping(path = "guardar")
     public ResponseEntity<ResponseDto> guardar(@RequestBody CarritoDto carritoDto)
     {
@@ -60,6 +51,16 @@ public class CarritoController {
     {
         responseDto.setCodigoRespuesta(HttpStatus.CREATED.value());
         carritoService.eliminarCarrito(id);
+        responseDto.setData(null);
+        return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
+    }
+
+
+    @DeleteMapping(path = "eliminartodo")
+    public ResponseEntity<ResponseDto> eliminar()
+    {
+        responseDto.setCodigoRespuesta(HttpStatus.CREATED.value());
+        carritoService.eliminarTodoCarrito();
         responseDto.setData(null);
         return new ResponseEntity<ResponseDto>(responseDto, HttpStatus.OK);
     }

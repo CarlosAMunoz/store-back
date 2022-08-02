@@ -9,4 +9,5 @@ public interface ICarritoService {
     CarritoDto buscarCarrito(Long Id);
     CarritoDto guardarCarrito(CarritoDto CarritoDto);
     void eliminarCarrito(Long Id);
+    void eliminarTodoCarrito();
 }

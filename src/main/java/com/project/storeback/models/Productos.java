@@ -22,7 +22,7 @@ public class Productos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    private String Nombre;
+    private String Nombre_Producto;
     private String Descripcion; 
     private Double Precio; 
 
@@ -30,11 +30,8 @@ public class Productos {
     @JoinColumn(name = "Id_Categoria", referencedColumnName = "Id_Categoria")
     private Categorias Id_Categoria;
     
-
     private String Imagen; 
     private Double CantidadDisponible; 
-
-
 
 }
  
